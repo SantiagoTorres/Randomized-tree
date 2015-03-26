@@ -45,7 +45,7 @@ def create_random_sequence(length = 10):
     l = range(0, length)
     random.shuffle(l)
 
-    return ((x, True) for x in l)
+    return [(x, True) for x in l]
 
 if __name__ == "__main__":
 
@@ -56,6 +56,7 @@ if __name__ == "__main__":
 
     sequence = create_random_sequence(length)
     tree = pybst.bstree.BSTree(sequence)
+    print("Order of insertion:\n\t{}".format([x[0] for x in sequence]))
     print("Tree's height {}".format(tree.get_height()))
     print("N = {}".format(length))
     print("log(N) = {}".format(log(length, 2)))
